@@ -22,7 +22,7 @@ import { Aegircolor } from './Aegircolor';
 import { Hvittmesh } from './Hvittmesh';
 import { Litamesh } from './Litamesh';
 import { Linur } from './Linur';
-import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from '@react-three/postprocessing'
+import { EffectComposer, DepthOfField, Bloom, Noise, Vignette, BrightnessContrast } from '@react-three/postprocessing'
 import { Macbook } from './Macbook';
 import { GataScene } from './GataScene';
 import { MacbookScene } from './MacbookScene';
@@ -95,9 +95,10 @@ export default function App() {
   //   outlines: { value: 0, min: 0, max: 1, step: 0.01 },
   //   singleSlider: { value: 0, min: 0, max: 2, step: 0.01 }
   // })
-  const { fontSize, outlines, singleSlider, scene } = useControls({
+  const { fontSize, contrast, outlines, singleSlider, scene } = useControls({
     fontSize: { value: 1, min: 0.5, max: 4, step: 0.01 },
-    scene:{value:'GataScene', options:[
+    contrast: { value: 0, min: -1.5, max: 1.5, step: 0.01 },
+    scene:{value:'MacbookScene', options:[
       'MacbookScene', 'GataScene'
     ]},
     outlines: { value: 0, min: 0, max: 1, step: 0.01 },
@@ -108,6 +109,9 @@ export default function App() {
   return (
     <>
     <Canvas>
+      <EffectComposer>
+        <BrightnessContrast contrast={contrast} />
+      </EffectComposer>
     <PerspectiveCamera
           position={[0, 0, 0]}
           fov={100}

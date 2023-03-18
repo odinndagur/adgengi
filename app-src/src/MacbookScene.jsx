@@ -1,9 +1,12 @@
 import { Html } from "@react-three/drei"
 import { useControls } from "leva"
+import { Suspense } from "react";
 import { Macbook } from './Macbook';
 
+
 function Visir(){
-    const { fontSize, contrast, outlines, singleSlider, scene } = useControls({
+    const { vision, fontSize, contrast, outlines, singleSlider, scene } = useControls({
+        vision: { value: 1, min: 0.5, max: 4, step: 0.01 },
         fontSize: { value: 1, min: 0.5, max: 4, step: 0.01 },
         contrast: { value: 1, min: 0, max: 4, step: 0.01 },
         scene:{value:'MacbookScene', options:[
@@ -80,14 +83,15 @@ export function MacbookScene(){
       singleSlider: { value: 0, min: 0, max: 2, step: 0.01 }
     })
     return (
-      <group>
+      <Suspense fallback={null}>
+      <group position={[0,0,-10]}>
       <Macbook position={[0,0,0]} scale={[50,50,50]}/>
           <Html
           // occlude='blending'
           occlude
           transform
           position={[0,5.5,0.08]}
-          zIndexRange={[0,100]}
+          // zIndexRange={[0,100]}
           >
             <div className="smapp" style={{
               backgroundColor: 'white',
@@ -100,5 +104,6 @@ export function MacbookScene(){
             </div>
         </Html>
       </group>
+      </Suspense>
     )
   }

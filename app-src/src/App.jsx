@@ -97,7 +97,7 @@ export default function App() {
   // })
   const { fontSize, outlines, singleSlider, scene } = useControls({
     fontSize: { value: 1, min: 0.5, max: 4, step: 0.01 },
-    scene:{value:'MacbookScene', options:[
+    scene:{value:'GataScene', options:[
       'MacbookScene', 'GataScene'
     ]},
     outlines: { value: 0, min: 0, max: 1, step: 0.01 },
@@ -108,7 +108,10 @@ export default function App() {
   return (
     <>
     <Canvas>
-    <PerspectiveCamera position={[0, 0, 0]} fov={100}/>
+    <PerspectiveCamera
+          position={[0, 0, 0]}
+          fov={100}
+          rotation={[3,0,0]}/>
     <Environment preset="city" />
     <ContactShadows frames={1} scale={5} position={[0, -1, 0]} far={1} blur={5} opacity={0.5} color="#204080" />
      

@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Litamesh(props) {
-  const { nodes, materials } = useGLTF('/litamesh-transformed.glb')
+  const { nodes, materials } = useGLTF('/adgengi/litamesh-transformed.glb')
   materials.Material_0.transparent = true
   materials.Material_0.opacity = props.opacity
   return (
@@ -17,4 +17,4 @@ export function Litamesh(props) {
   )
 }
 
-useGLTF.preload('/litamesh-transformed.glb')
+useGLTF.preload('/adgengi/litamesh-transformed.glb')

@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Aegircolor(props) {
-  const { nodes, materials } = useGLTF('/aegircolor-transformed.glb')
+  const { nodes, materials } = useGLTF('/adgengi/aegircolor-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.head3d.geometry} material={materials.material_0} />
@@ -15,4 +15,4 @@ export function Aegircolor(props) {
   )
 }
 
-useGLTF.preload('/aegircolor-transformed.glb')
+useGLTF.preload('/adgengi/aegircolor-transformed.glb')

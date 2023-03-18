@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Hvittmesh(props) {
-  const { nodes, materials } = useGLTF('/hvittmesh-transformed.glb')
+  const { nodes, materials } = useGLTF('/adgengi/hvittmesh-transformed.glb')
   // materials.Material_0.transparent = true
   // materials.Material_0.opacity = props.opacity
   return (
@@ -19,4 +19,4 @@ export function Hvittmesh(props) {
   )
 }
 
-useGLTF.preload('/hvittmesh-transformed.glb')
+useGLTF.preload('/adgengi/hvittmesh-transformed.glb')

@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Linur(props) {
-  const { nodes, materials } = useGLTF('/linur-transformed.glb')
+  const { nodes, materials } = useGLTF('/adgengi/linur-transformed.glb')
   materials.Material.transparent = true
   materials.Material.opacity = props.opacity
   return (
@@ -17,4 +17,4 @@ export function Linur(props) {
   )
 }
 
-useGLTF.preload('/linur-transformed.glb')
+useGLTF.preload('/adgengi/linur-transformed.glb')

@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF('/hanna-landslag-transformed.glb')
+  const { nodes, materials } = useGLTF('/adgengi/hanna-landslag-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Plane.geometry} material={materials['Material.001']} position={[93.6, 0.51, 62.17]} rotation={[0, -1.19, 0]} scale={[10, 15.78, 10]} />
@@ -17,4 +17,4 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/hanna-landslag-transformed.glb')
+useGLTF.preload('/adgengi/hanna-landslag-transformed.glb')

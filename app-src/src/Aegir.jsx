@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF('/aegir-transformed.glb')
+  const { nodes, materials } = useGLTF('/adgengi/aegir-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.head3d.geometry} material={materials.material_0} rotation={[Math.PI / 2, 0, 0]} scale={0.1} />
@@ -15,4 +15,4 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/aegir-transformed.glb')
+useGLTF.preload('/adgengi/aegir-transformed.glb')

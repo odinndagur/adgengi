@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Harmaborg8(props) {
-  const { nodes, materials } = useGLTF('/harmaborg8-transformed.glb')
+  const { nodes, materials } = useGLTF('/adgengi/harmaborg8-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Cube002.geometry}>
@@ -18,4 +18,4 @@ export function Harmaborg8(props) {
   )
 }
 
-useGLTF.preload('/harmaborg8-transformed.glb')
+useGLTF.preload('/adgengi/harmaborg8-transformed.glb')

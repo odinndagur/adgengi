@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF('/aegir6013myndbandpaelinggata-transformed.glb')
+  const { nodes, materials } = useGLTF('/adgengi/aegir6013myndbandpaelinggata-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Plane.geometry} material={materials.roupellstreet2108B} position={[0.34, -1.9, -22.69]} rotation={[-0.03, 0, 0]} scale={[1.51, 1.51, 25.25]} />
@@ -18,4 +18,4 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/aegir6013myndbandpaelinggata-transformed.glb')
+useGLTF.preload('/adgengi/aegir6013myndbandpaelinggata-transformed.glb')

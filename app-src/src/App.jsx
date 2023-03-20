@@ -28,7 +28,7 @@ import { GataScene } from './GataScene';
 import { MacbookScene } from './MacbookScene';
 
 import { map, clamp } from './map'
-import { Group } from 'three';
+import { Camera, Group } from 'three';
 
 extend({ UnrealBloomPass })
 
@@ -128,7 +128,8 @@ export default function App() {
     {scene == 'MacbookScene' ? <MacbookScene/> : <GataScene />}
 
       {/* <OrbitControls /> */}
-      <CameraControls />
+      {scene == 'GataScene' && <CameraControls />}
+      {/* <CameraControls /> */}
       
       
 

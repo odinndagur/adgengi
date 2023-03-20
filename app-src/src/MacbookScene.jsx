@@ -32,17 +32,20 @@ function Visir(){
           textAlign:'left',
           flexDirection:'column',
           padding:'0.5rem',
-          backgroundColor:'white'
+          backgroundColor:'white',
+          overflow: 'scroll'
         },
         header: {
           width:'100%',
+          height:'auto',
           maxHeight:'4rem',
           display:'flex',
           justifyContent:'center',
           // alignContent:'center',
           flexDirection:'column',
           backgroundColor:'blue',
-          color:'white'
+          color:'white',
+          fontSize: `${Math.min(2,fontSize)}rem`
         },
         thumbnail: {
           width: '250px',
@@ -72,7 +75,7 @@ function Visir(){
                 </p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni consequuntur culpa aut laborum, odit dolorum doloremque nisi debitis accusamus laudantium.</p>
 
-                <img style={styles.thumbnail} src="https://www.visir.is/i/EEB93FBD038EC6BE60C3CF4194277CB205823F3AE33C08B650607F154D4536B5_713x0.jpg" />
+                <video controls style={styles.thumbnail} src="http://msx.benzac.de/media/video1.mp4" />
                 <p>Aut laborum, odit dolorum doloremque nisi debitis accusamus laudantium dolorum doloremque nisi debitis accusamus laudantium.</p>
 
             </div>

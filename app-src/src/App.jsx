@@ -99,8 +99,8 @@ export default function App() {
     scene:{value:'MacbookScene', options:[
       'MacbookScene', 'GataScene'
     ]},
-    contrast: { value: 0, min: -1.5, max: 1.5, step: 0.01 },
-    saturation: { value: 0, min: -1, max: 0, step: 0.01 },
+    contrast: { value: 0, min: -1, max: 1, step: 0.01 },
+    saturation: { value: -1, min: -1, max: 1, step: 0.01 },
   })
 
 

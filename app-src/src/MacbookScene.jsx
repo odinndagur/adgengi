@@ -18,52 +18,74 @@ function Visir(){
         contrast: { value: 0, min: -1, max: 1, step: 0.01 },
         saturation: { value: 1, min: 0, max: 1, step: 0.01 },
       })
+
+      const styles = {
+        visir: {
+          filter:`contrast(${1 + contrast})`,
+          webkitFilter:`contrast(${1 + contrast})`,
+          width:'100%',
+          height:'100%',
+          display:'flex',
+          // justifyContent:'center',
+          // alignItems:'center',
+          fontSize:`${fontSize}rem`,
+          textAlign:'left',
+          flexDirection:'column',
+          padding:'0.5rem',
+          backgroundColor:'white'
+        },
+        header: {
+          width:'100%',
+          maxHeight:'4rem',
+          display:'flex',
+          justifyContent:'center',
+          // alignContent:'center',
+          flexDirection:'column',
+          backgroundColor:'blue',
+          color:'white'
+        },
+        thumbnail: {
+          width: '250px',
+          padding:'1rem'
+        },
+        newsStory: {
+          display:'block',
+          margin:'0 4rem',
+          maxWidth: '400px',
+          overflow: 'auto'
+        }
+      }
     return (
-        <div style={{
-            filter:`contrast(${1 + contrast})`,
-            webkitFilter:`contrast(${1 + contrast})`,
-            width:'100%',
-            height:'100%',
-            display:'flex',
-            // justifyContent:'center',
-            // alignItems:'center',
-            fontSize:`${fontSize}rem`,
-            textAlign:'left',
-            flexDirection:'column',
-            padding:'0.5rem',
-            backgroundColor:'white'
-          }}>
-          <header style={{
-            width:'100%',
-            maxHeight:'4rem',
-            display:'flex',
-            justifyContent:'center',
-            // alignContent:'center',
-            flexDirection:'column',
-            backgroundColor:'blue',
-            color:'white'
-        }}>
+        <div style={
+            styles.visir
+          }>
+          <header style={styles.header}>
             <h1>Vísir.is</h1>
           </header>
           <main>
-            <div className="news-story">
+            <div style={styles.newsStory}>
                 <h2>
                     Netti nettason kominn aftur!
                 </h2>
                 <p>
                     Helvíti nettur á því eins og alltaf. What a næs yo.
                 </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni consequuntur culpa aut laborum, odit dolorum doloremque nisi debitis accusamus laudantium.</p>
+
+                <img style={styles.thumbnail} src="https://www.visir.is/i/EEB93FBD038EC6BE60C3CF4194277CB205823F3AE33C08B650607F154D4536B5_713x0.jpg" />
+                <p>Aut laborum, odit dolorum doloremque nisi debitis accusamus laudantium dolorum doloremque nisi debitis accusamus laudantium.</p>
+
             </div>
-            <div className="news-story">
+            <div style={styles.newsStory}>
                 <h2>WHAT! Vann í lottó??</h2>
                 <p>
                     Hver? Veit ekki. Einhver sem keypti miða.
                 </p>
             </div>
-            <div className="news-story">
+            <div style={styles.newsStory}>
 
             </div>
-            <div className="news-story">
+            <div style={styles.newsStory}>
 
             </div>
           </main>

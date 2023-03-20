@@ -32,7 +32,7 @@ function Visir(){
           fontSize:`${fontSize}rem`,
           textAlign:'left',
           flexDirection:'column',
-          padding:'0.5rem',
+          // padding:'0.5rem',
           backgroundColor:'white',
           overflow: 'scroll'
         },
@@ -41,6 +41,9 @@ function Visir(){
           height:'auto',
           maxHeight:'4rem',
           display:'flex',
+          padding:'0 1rem',
+          position:'sticky',
+          top:'0',
           justifyContent:'center',
           // alignContent:'center',
           flexDirection:'column',

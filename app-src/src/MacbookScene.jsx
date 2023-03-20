@@ -2,23 +2,26 @@ import { Html } from "@react-three/drei"
 import { useControls } from "leva"
 import { Suspense } from "react";
 import { Macbook } from './Macbook';
+import './MacbookScene.css';
 
 
 function Visir(){
-    const { vision, fontSize, contrast, outlines, singleSlider, scene } = useControls({
+    const { vision, fontSize, contrast, saturation, scene } = useControls({
         vision: { value: 1, min: 0.5, max: 4, step: 0.01 },
-        fontSize: { value: 1, min: 0.5, max: 4, step: 0.01 },
-        contrast: { value: 1, min: 0, max: 4, step: 0.01 },
-        scene:{value:'MacbookScene', options:[
-          'MacbookScene', 'GataScene'
-        ]},
-        outlines: { value: 0, min: 0, max: 1, step: 0.01 },
-        singleSlider: { value: 0, min: 0, max: 2, step: 0.01 }
+        fontSize: { 
+          value: 1,
+          min: 0.5,
+          max: 4,
+          step: 0.01,
+          render: (get) => get('scene') === 'MacbookScene'
+        },
+        contrast: { value: 0, min: -1, max: 1, step: 0.01 },
+        saturation: { value: 1, min: 0, max: 1, step: 0.01 },
       })
     return (
         <div style={{
-            filter:`contrast(${contrast})`,
-            webkitFilter:`contrast(${contrast})`,
+            filter:`contrast(${1 + contrast})`,
+            webkitFilter:`contrast(${1 + contrast})`,
             width:'100%',
             height:'100%',
             display:'flex',
@@ -27,7 +30,8 @@ function Visir(){
             fontSize:`${fontSize}rem`,
             textAlign:'left',
             flexDirection:'column',
-            padding:'0.5rem'
+            padding:'0.5rem',
+            backgroundColor:'white'
           }}>
           <header style={{
             width:'100%',
@@ -74,17 +78,10 @@ function Visir(){
 
 
 export function MacbookScene(){
-    const { fontSize, outlines, singleSlider, scene } = useControls({
-      fontSize: { value: 1, min: 0.5, max: 4, step: 0.01 },
-      scene:{value:'MacbookScene', options:[
-        'MacbookScene', 'GataScene'
-      ]},
-      outlines: { value: 0, min: 0, max: 1, step: 0.01 },
-      singleSlider: { value: 0, min: 0, max: 2, step: 0.01 }
-    })
+    
     return (
       <Suspense fallback={null}>
-      <group position={[0,0,-10]}>
+      <group position={[0,-4,-12]}>
       <Macbook position={[0,0,0]} scale={[50,50,50]}/>
           <Html
           // occlude='blending'

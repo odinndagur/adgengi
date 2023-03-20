@@ -22,7 +22,7 @@ import { Aegircolor } from './Aegircolor';
 import { Hvittmesh } from './Hvittmesh';
 import { Litamesh } from './Litamesh';
 import { Linur } from './Linur';
-import { EffectComposer, DepthOfField, Bloom, Noise, Vignette, BrightnessContrast } from '@react-three/postprocessing'
+import { EffectComposer, DepthOfField, Bloom, Noise, Vignette, BrightnessContrast, HueSaturation } from '@react-three/postprocessing'
 import { Macbook } from './Macbook';
 import { GataScene } from './GataScene';
 import { MacbookScene } from './MacbookScene';
@@ -95,14 +95,12 @@ export default function App() {
   //   outlines: { value: 0, min: 0, max: 1, step: 0.01 },
   //   singleSlider: { value: 0, min: 0, max: 2, step: 0.01 }
   // })
-  const { fontSize, contrast, outlines, singleSlider, scene } = useControls({
-    fontSize: { value: 1, min: 0.5, max: 4, step: 0.01 },
-    contrast: { value: 0, min: -1.5, max: 1.5, step: 0.01 },
+  const { scene, fontSize, contrast, saturation } = useControls({
     scene:{value:'MacbookScene', options:[
       'MacbookScene', 'GataScene'
     ]},
-    outlines: { value: 0, min: 0, max: 1, step: 0.01 },
-    singleSlider: { value: 0, min: 0, max: 2, step: 0.01 }
+    contrast: { value: 0, min: -1.5, max: 1.5, step: 0.01 },
+    saturation: { value: 0, min: -1, max: 0, step: 0.01 },
   })
 
 
@@ -111,6 +109,7 @@ export default function App() {
     <Canvas>
       <EffectComposer>
         <BrightnessContrast contrast={contrast} />
+        <HueSaturation saturation={saturation} />
       </EffectComposer>
     <PerspectiveCamera
           position={[0, 0, 0]}
@@ -119,7 +118,8 @@ export default function App() {
     <Environment preset="city" />
     <ContactShadows frames={1} scale={5} position={[0, -1, 0]} far={1} blur={5} opacity={0.5} color="#204080" />
      
-    <color attach="background" args={['#111']} />
+    {/* <color attach="background" args={['#111']} /> */}
+    <color attach="background" args={['#FFF']} />
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -10, -10]} />

@@ -5,12 +5,14 @@ import { Litamesh } from './Litamesh';
 import { Linur } from './Linur';
 
 export function GataScene() {
-    const { outlines, singleSlider, scene } = useControls({
-      scene:{value:'MacbookScene', options:[
-        'MacbookScene', 'GataScene'
-      ]},
-      outlines: { value: 0, min: 0, max: 1, step: 0.01 },
-      singleSlider: { value: 0, min: 0, max: 2, step: 0.01 }
+    const {  singleSlider } = useControls({
+      singleSlider: {
+        value: 0,
+        min: 0,
+        max: 2,
+        step: 0.01,
+        render: (get) => get('scene') === 'GataScene'
+      }
     })
     return (
       <group>

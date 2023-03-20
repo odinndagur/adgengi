@@ -21,6 +21,7 @@ function Visir(){
 
       const styles = {
         visir: {
+          zoom:`${vision}`,
           filter:`contrast(${1 + contrast} saturate(${saturation}))`,
           webkitFilter:`contrast(${1 + contrast}) saturate(${saturation})`,
           width:'100%',
@@ -120,7 +121,7 @@ export function MacbookScene(){
               width:'600px',
               height: '410px',
               borderRadius: '2px',
-              overflow:'hidden'
+              overflow:'hidden',
               }}>
                 <Visir/>
             </div>

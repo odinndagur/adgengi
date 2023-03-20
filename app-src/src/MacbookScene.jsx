@@ -21,8 +21,8 @@ function Visir(){
 
       const styles = {
         visir: {
-          filter:`contrast(${1 + contrast})`,
-          webkitFilter:`contrast(${1 + contrast})`,
+          filter:`contrast(${1 + contrast} saturate(${saturation}))`,
+          webkitFilter:`contrast(${1 + contrast}) saturate(${saturation})`,
           width:'100%',
           height:'100%',
           display:'flex',

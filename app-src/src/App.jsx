@@ -99,8 +99,8 @@ export default function App() {
     scene:{value:'MacbookScene', options:[
       'MacbookScene', 'GataScene'
     ]},
-    contrast: { value: 0, min: -1, max: 1, step: 0.01 },
-    saturation: { value: -1, min: -1, max: 1, step: 0.01 },
+    contrast: { value: 0, min: -1, max: 0.99, step: 0.01 },
+    saturation: { value: 1, min: 0, max: 1, step: 0.01 },
   })
 
 
@@ -109,7 +109,7 @@ export default function App() {
     <Canvas>
       <EffectComposer>
         <BrightnessContrast contrast={contrast} />
-        <HueSaturation saturation={saturation} />
+        <HueSaturation saturation={saturation - 1} />
       </EffectComposer>
     <PerspectiveCamera
           position={[0, 0, 0]}

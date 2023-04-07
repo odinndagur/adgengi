@@ -26,6 +26,7 @@ import { EffectComposer, DepthOfField, Bloom, Noise, Vignette, BrightnessContras
 import { Macbook } from './Macbook';
 import { GataScene } from './GataScene';
 import { MacbookScene } from './MacbookScene';
+import { KronuScene } from './KronuScene';
 
 import { map, clamp } from './map'
 import { Camera, Group } from 'three';
@@ -96,8 +97,8 @@ export default function App() {
   //   singleSlider: { value: 0, min: 0, max: 2, step: 0.01 }
   // })
   const { scene, fontSize, contrast, saturation } = useControls({
-    scene:{value:'MacbookScene', options:[
-      'MacbookScene', 'GataScene'
+    scene:{value:'KronuScene', options:[
+      'MacbookScene', 'GataScene','KronuScene'
     ]},
     contrast: { value: 0, min: -1, max: 0.99, step: 0.01 },
     saturation: { value: 1, min: 0, max: 1, step: 0.01 },
@@ -125,10 +126,12 @@ export default function App() {
       <pointLight position={[-10, -10, -10]} />
 
 
-    {scene == 'MacbookScene' ? <MacbookScene/> : <GataScene />}
+    {scene == 'MacbookScene' && <MacbookScene/>}
+    {scene == 'GataScene' && <GataScene />}
+    {scene == 'KronuScene' && <KronuScene />}
 
       {/* <OrbitControls /> */}
-      {scene == 'GataScene' && <CameraControls />}
+      {scene == 'GataScene' || 'KronuScene' && <CameraControls />}
       {/* <CameraControls /> */}
       
       

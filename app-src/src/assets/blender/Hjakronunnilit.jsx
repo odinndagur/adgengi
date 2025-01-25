@@ -7,12 +7,12 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Model(props) {
-  const { nodes, materials } = useGLTF('/hjakronunnilit-transformed.glb')
-  return (
-    <group {...props} dispose={null}>
-      <mesh geometry={nodes.Mesh_0.geometry} material={materials.Material_0} />
-    </group>
-  )
+	const { nodes, materials } = useGLTF('/hjakronunnilit-transformed.glb')
+	return (
+		<group {...props} dispose={null}>
+			<mesh geometry={nodes.Mesh_0.geometry} material={materials.Material_0} />
+		</group>
+	)
 }
 
-useGLTF.preload('/hjakronunnilit-transformed.glb')
+useGLTF.preload('/adgengi/hjakronunnilit-transformed.glb')
